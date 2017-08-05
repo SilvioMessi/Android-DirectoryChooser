@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import net.rdrei.android.dirchooser.DirectoryChooserActivity;
 import net.rdrei.android.dirchooser.DirectoryChooserConfig;
+import net.rdrei.android.dirchooser.SmbDirectoryChooserActivity;
+import net.rdrei.android.dirchooser.SmbDirectoryChooserConfig;
 
 public class DirChooserSample extends Activity {
     private static final int REQUEST_DIRECTORY = 0;
@@ -44,6 +46,31 @@ public class DirChooserSample extends Activity {
 
                         chooserIntent.putExtra(
                                 DirectoryChooserActivity.EXTRA_CONFIG,
+                                config);
+
+                        startActivityForResult(chooserIntent, REQUEST_DIRECTORY);
+                    }
+                });
+
+        findViewById(R.id.btnSmbChoose)
+                .setOnClickListener(new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        final Intent chooserIntent = new Intent(
+                                DirChooserSample.this,
+                                SmbDirectoryChooserActivity.class);
+
+                        final SmbDirectoryChooserConfig config = SmbDirectoryChooserConfig.builder()
+                                .initialDirectory("Folder name")
+                                .address("192.168.1.1")
+                                .username("username")
+                                .password("password")
+                                .domain("")
+                                .build();
+
+                        chooserIntent.putExtra(
+                                SmbDirectoryChooserActivity.EXTRA_CONFIG,
                                 config);
 
                         startActivityForResult(chooserIntent, REQUEST_DIRECTORY);

@@ -10,6 +10,7 @@
     <string name="create_folder_error_no_write_access">Cannot write to this folder</string>
     <string name="create_folder_error_already_exists">Folder already exists</string>
     <string name="create_folder_error">Could not create folder</string>
+    <string name="access_smb_folder_error">Could not access to SMB folder</string>
     <string name="up_label">Up</string>
 
 </resources>
