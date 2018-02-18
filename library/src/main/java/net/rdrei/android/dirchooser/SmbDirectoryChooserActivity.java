@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 /**
- * Let's the user choose a directory on the storage device. The selected folder
+ * Let's the user choose a network shared folder (SMB). The selected folder
  * will be sent back to the starting activity as an activity result.
  */
 public class SmbDirectoryChooserActivity extends AppCompatActivity implements
